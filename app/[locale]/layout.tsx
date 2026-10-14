@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { LocalePersist } from "@/components/locale-persist";
 import { LOCALES, getDictionary, isLocale, type Locale } from "@/lib/i18n";
 
 export function generateStaticParams() {
@@ -21,6 +22,7 @@ export default async function LocaleLayout({
 
   return (
     <div className="relative flex min-h-screen flex-col">
+      <LocalePersist locale={locale as Locale} />
       <Navbar locale={locale as Locale} dict={dict} />
       <main className="flex-1">{children}</main>
       <Footer locale={locale as Locale} dict={dict} />

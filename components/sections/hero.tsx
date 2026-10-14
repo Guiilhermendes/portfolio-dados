@@ -68,7 +68,14 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: Locale }) {
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href="/cv/CV_Guilherme_Mendes_PT.pdf" download>
+              <a
+                href={
+                  locale === "en"
+                    ? "/cv/CV_Guilherme_Mendes_EN.pdf"
+                    : "/cv/CV_Guilherme_Mendes_PT.pdf"
+                }
+                download
+              >
                 <Download className="h-4 w-4" />
                 {dict.hero.ctaDownload}
               </a>

@@ -26,7 +26,8 @@ export const cvs: CVVariant[] = [
     id: "en",
     language: "English",
     label: "CV in English",
-    file: null,
-    available: false,
+    file: "/cv/CV_Guilherme_Mendes_EN.pdf",
+    available: true,
+    updatedAt: "2026-10-14",
   },
 ];

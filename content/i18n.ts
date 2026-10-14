@@ -38,7 +38,7 @@ const pt = {
     description:
       "Engenheiro de Dados Sênior com 7+ anos em engenharia de software e dados. Construo pipelines ETL/ELT, workflows serverless e plataformas de dados em nuvem para o setor financeiro, com Python, PySpark, Databricks e AWS.",
     ctaContact: "Entrar em contato",
-    ctaDownload: "Baixar CV (PT)",
+    ctaDownload: "Baixar CV",
     ctaFullStack: "Ver portfólio Full Stack",
     terminalTitle: "pipeline.yaml",
     outcomesComment: "# outcomes",
@@ -291,7 +291,7 @@ const en: typeof pt = {
     description:
       "Senior Data Engineer with 7+ years across software and data engineering. I build ETL/ELT pipelines, serverless workflows and cloud data platforms for the financial sector, using Python, PySpark, Databricks and AWS.",
     ctaContact: "Get in touch",
-    ctaDownload: "Download resume (PT)",
+    ctaDownload: "Download resume",
     ctaFullStack: "View Full Stack portfolio",
     terminalTitle: "pipeline.yaml",
     outcomesComment: "# outcomes",

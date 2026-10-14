@@ -21,7 +21,8 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
   const dict = getDictionary(locale as Locale);
   return {
-    title: dict.meta.title,
+    // Browser tab shows just "Portfolio" (overrides the root template suffix).
+    title: { absolute: site.tabTitle },
     description: dict.meta.description,
     alternates: {
       canonical: `${site.url}/${locale}`,
@@ -31,12 +32,19 @@ export async function generateMetadata({
         "x-default": `${site.url}/pt`,
       },
     },
+    // OpenGraph (link previews / social cards) keeps the rich, SEO-friendly
+    // title so shared links show "Guilherme Mendes · Senior Data Engineer".
     openGraph: {
       locale: dict.meta.locale,
       title: dict.meta.title,
       description: dict.meta.description,
       type: "website",
       url: `${site.url}/${locale}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.meta.title,
+      description: dict.meta.description,
     },
   };
 }

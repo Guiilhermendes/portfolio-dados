@@ -10,8 +10,8 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: site.title,
-    template: `%s · ${site.shortName}`,
+    default: site.tabTitle,
+    template: `%s · ${site.tabTitle}`,
   },
   description: site.description,
   authors: [{ name: site.shortName, url: site.linkedin }],

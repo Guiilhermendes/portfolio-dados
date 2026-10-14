@@ -30,26 +30,26 @@ const pt = {
   },
 
   hero: {
-    badge: "Dados em nuvem · Serviços financeiros",
+    badge: "Dados em escala · Cloud nativo",
     role: "Engenheiro de Dados Sênior",
     titleBefore: "Transformo dados em",
     titleHighlight: "plataformas confiáveis",
     titleAfter: "e decisões em escala.",
     description:
-      "Engenheiro de Dados Sênior com 7+ anos em engenharia de software e dados. Construo pipelines ETL/ELT, workflows serverless e plataformas de dados em nuvem para o setor financeiro, com Python, PySpark, Databricks e AWS.",
+      "Engenheiro de Dados Sênior com 7+ anos em engenharia de software e dados. Construo pipelines ETL/ELT, workflows serverless e plataformas de dados em nuvem com Python, PySpark, Databricks e AWS.",
     ctaContact: "Entrar em contato",
     ctaDownload: "Baixar CV",
     ctaFullStack: "Ver portfólio Full Stack",
     terminalTitle: "pipeline.yaml",
     outcomesComment: "# outcomes",
-    ingestComment: "# ingest.financial.policies",
+    ingestComment: "# ingest.decision.events",
   },
 
   about: {
     eyebrow: "Sobre",
     title: "Engenharia de dados com mentalidade de software",
     description:
-      "Combino 7+ anos entre engenharia de software, engenharia de dados e cloud. Atuo em sistemas críticos de decisão no setor financeiro, com foco em escalabilidade, qualidade de dados, observabilidade e automação.",
+      "Combino 7+ anos entre engenharia de software, engenharia de dados e cloud. Atuo em sistemas críticos e distribuídos em larga escala, com foco em escalabilidade, qualidade de dados, observabilidade e automação.",
     impactLabel: "impacto",
     metrics: [
       {
@@ -73,7 +73,7 @@ const pt = {
     ],
     focusLabel: "foco atual",
     focusText:
-      "Plataformas de dados em nuvem para sistemas críticos de decisão financeira, utilizando ",
+      "Plataformas de dados em nuvem para pipelines críticos em larga escala, utilizando ",
     focusHighlight1: "AWS Glue, Lambda, S3, Athena, Databricks",
     focusTextMiddle: " e ",
     focusHighlight2: "FICO DMPS",
@@ -283,26 +283,26 @@ const en: typeof pt = {
   },
 
   hero: {
-    badge: "Cloud data · Financial services",
+    badge: "Data at scale · Cloud native",
     role: "Senior Data Engineer",
     titleBefore: "I turn data into",
     titleHighlight: "reliable platforms",
     titleAfter: "and decisions at scale.",
     description:
-      "Senior Data Engineer with 7+ years across software and data engineering. I build ETL/ELT pipelines, serverless workflows and cloud data platforms for the financial sector, using Python, PySpark, Databricks and AWS.",
+      "Senior Data Engineer with 7+ years across software and data engineering. I build ETL/ELT pipelines, serverless workflows and cloud data platforms using Python, PySpark, Databricks and AWS.",
     ctaContact: "Get in touch",
     ctaDownload: "Download resume",
     ctaFullStack: "View Full Stack portfolio",
     terminalTitle: "pipeline.yaml",
     outcomesComment: "# outcomes",
-    ingestComment: "# ingest.financial.policies",
+    ingestComment: "# ingest.decision.events",
   },
 
   about: {
     eyebrow: "About",
     title: "Data engineering with a software mindset",
     description:
-      "7+ years combining software engineering, data engineering and cloud. I work on mission-critical decisioning systems for the financial sector, focused on scalability, data quality, observability and automation.",
+      "7+ years combining software engineering, data engineering and cloud. I work on mission-critical, distributed systems at scale, focused on scalability, data quality, observability and automation.",
     impactLabel: "impact",
     metrics: [
       {
@@ -326,7 +326,7 @@ const en: typeof pt = {
     ],
     focusLabel: "current focus",
     focusText:
-      "Cloud data platforms for mission-critical financial decisioning systems, using ",
+      "Cloud data platforms for mission-critical pipelines at scale, using ",
     focusHighlight1: "AWS Glue, Lambda, S3, Athena, Databricks",
     focusTextMiddle: " and ",
     focusHighlight2: "FICO DMPS",

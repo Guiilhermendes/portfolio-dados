@@ -1,134 +1,160 @@
-# Portfólio de Engenharia de Dados — Guilherme Mendes
+# Data Engineering Portfolio — Guilherme Mendes
 
-Portfólio pessoal focado em Engenharia de Dados, construído em [Next.js 16](https://nextjs.org) (App Router) + TypeScript + Tailwind CSS + shadcn/ui, com deploy no Vercel.
+Personal portfolio focused on Data Engineering, built with [Next.js 16](https://nextjs.org) (App Router) + TypeScript + Tailwind CSS + shadcn/ui, deployed on Vercel. Available in Portuguese and English.
 
-Portfólio Full Stack: <https://guilhermendes-app-pied.vercel.app/>
+Full Stack portfolio: <https://guilhermendes-app-pied.vercel.app/>
 
 ## Stack
 
 - **Framework**: Next.js 16 (App Router)
 - **UI**: Tailwind CSS + shadcn/ui + `lucide-react` + `react-icons`
-- **Formulários**: `react-hook-form` + `zod`
-- **E-mail**: [Resend](https://resend.com)
+- **i18n**: Route-based (`/pt`, `/en`) with language toggle
+- **Forms**: `react-hook-form` + `zod`
+- **Email**: [Resend](https://resend.com)
 - **Analytics**: `@vercel/analytics`
 - **Deploy**: Vercel
 
-## Rodando localmente
+## Running locally
 
 ```bash
-# instalar
+# install dependencies
 npm install
 
-# dev
+# dev server
 npm run dev
 # http://localhost:3000
 
-# build de produção
+# production build
 npm run build && npm run start
 ```
 
-### Variáveis de ambiente
+### Environment variables
 
-Copie `.env.example` para `.env.local`:
+Copy `.env.example` to `.env.local`:
 
 ```bash
 cp .env.example .env.local
 ```
 
-| Variável | Obrigatório | Descrição |
+| Variable | Required | Description |
 | --- | --- | --- |
-| `RESEND_API_KEY` | sim (produção) | Chave da API do [Resend](https://resend.com/api-keys) para o formulário de contato. |
-| `CONTACT_TO_EMAIL` | sim | Para onde o formulário envia (padrão: `guilhermemendeds@gmail.com`). |
-| `CONTACT_FROM_EMAIL` | não | Remetente verificado no Resend. Em dev usa `onboarding@resend.dev`. |
-| `NEXT_PUBLIC_GITHUB_USER` | não | Usuário do GitHub a listar nos projetos. Padrão: `Guiilhermendes`. |
+| `RESEND_API_KEY` | yes (production) | [Resend](https://resend.com/api-keys) API key for the contact form. |
+| `CONTACT_TO_EMAIL` | yes | Destination email for form submissions (default: `guilhermemendeds@gmail.com`). |
+| `CONTACT_FROM_EMAIL` | no | Verified sender in Resend. Falls back to `onboarding@resend.dev` in dev. |
+| `NEXT_PUBLIC_GITHUB_USER` | no | GitHub username used to list projects. Default: `Guiilhermendes`. |
 
-## Como adicionar um novo notebook do Databricks
+## Internationalization (PT / EN)
 
-1. No Databricks, abra o notebook e vá em **File → Export → HTML**.
-2. Salve o arquivo em `public/notebooks/<slug>.html` (ex.: `public/notebooks/etl-financeiro.html`).
-3. Registre o notebook em [`content/notebooks.ts`](./content/notebooks.ts):
+The site runs under locale-prefixed routes:
+
+- `/` → redirects to `/pt` (default locale)
+- `/pt` → Portuguese version
+- `/en` → English version
+- `/[locale]/notebooks`
+- `/[locale]/notebooks/[slug]`
+
+All UI strings live in a single dictionary at [`content/i18n.ts`](./content/i18n.ts). To add a new string, add the key to **both** `pt` and `en` — TypeScript will enforce the shape.
+
+The language toggle in the navbar preserves the current path when switching locales (`/en/notebooks/foo` → `/pt/notebooks/foo`).
+
+## How to add a new Databricks notebook
+
+1. In Databricks, open the notebook → **File → Export → HTML**.
+2. Save the file to `public/notebooks/<slug>.html` (e.g. `public/notebooks/financial-etl.html`).
+3. Register the notebook in [`content/notebooks.ts`](./content/notebooks.ts):
 
 ```ts
 {
-  slug: "etl-financeiro",
-  title: "ETL para motor de decisão financeira",
-  description: "Pipeline PySpark que ingere eventos e grava no S3 particionado.",
+  slug: "financial-etl",
+  title: "ETL for a financial decision engine",
+  description: "PySpark pipeline that ingests decision events and writes to S3 partitioned by date.",
   tags: ["PySpark", "Databricks", "ETL"],
-  htmlPath: "/notebooks/etl-financeiro.html",
+  htmlPath: "/notebooks/financial-etl.html",
   date: "2026-10-14",
   platform: "Databricks",
-  // sourceUrl: "https://community.cloud.databricks.com/...", // opcional
+  // sourceUrl: "https://community.cloud.databricks.com/...", // optional
 }
 ```
 
-4. O notebook aparece automaticamente em `/#notebooks` e em `/notebooks/<slug>`.
+4. The notebook shows up automatically at `/[locale]/#notebooks` and at `/[locale]/notebooks/<slug>`.
 
-> Dica: para Jupyter, use **File → Download as → HTML**. Mesma estrutura.
+> Jupyter? Use **File → Download as → HTML**. Same structure.
 
-## Como adicionar o CV em inglês
+## How the resume (CV) section works
 
-1. Coloque o PDF em `public/cv/CV_Guilherme_Mendes_EN.pdf`.
-2. Em [`content/cvs.ts`](./content/cvs.ts), ajuste o item `en`:
+Resume metadata lives in [`content/cvs.ts`](./content/cvs.ts). Both PT and EN are included:
 
 ```ts
 {
-  id: "en",
-  language: "English",
-  label: "CV in English",
-  file: "/cv/CV_Guilherme_Mendes_EN.pdf",
+  id: "pt",
+  language: "Português",
+  label: "CV em Português (ATS-friendly)",
+  file: "/cv/CV_Guilherme_Mendes_PT.pdf",
   available: true,
-  updatedAt: "2026-11-01",
 }
 ```
 
-## Como adicionar/filtrar projetos do GitHub
+To replace a PDF, drop the new file in `public/cv/` with the same filename and update `updatedAt`.
 
-Os projetos são buscados automaticamente da API pública do GitHub e filtrados pela heurística em [`lib/github.ts`](./lib/github.ts):
+The Hero section's "Download resume" button is locale-aware: on `/pt` it serves the Portuguese PDF, on `/en` the English one.
 
-- Linguagens consideradas "de dados": `Python`, `Jupyter Notebook`, `SQL`, `Scala`, `R`, `HCL`.
-- Topics considerados "de dados": `data`, `data-engineering`, `etl`, `spark`, `pyspark`, `databricks`, `aws`, `glue`, `athena`, etc.
+## How GitHub projects are listed
 
-Para que um repositório apareça: adicione topics relevantes no GitHub (ex: `data-engineering`, `pyspark`). O cache ISR do Next revalida a cada 1 hora.
+Projects are fetched automatically from the public GitHub API and filtered by the heuristics in [`lib/github.ts`](./lib/github.ts):
 
-## Deploy no Vercel
+- Languages considered "data": `Python`, `Jupyter Notebook`, `SQL`, `Scala`, `R`, `HCL`.
+- Topics considered "data": `data`, `data-engineering`, `etl`, `spark`, `pyspark`, `databricks`, `aws`, `glue`, `athena`, etc.
 
-1. Faça push do projeto para um repositório Git.
-2. No Vercel, importe o repositório.
-3. Configure as variáveis de ambiente em **Project Settings → Environment Variables**:
+To get a repository featured: add relevant topics on GitHub (e.g. `data-engineering`, `pyspark`). Next.js ISR cache revalidates every hour.
+
+If no "data" repos are found, falls back to the most recently updated public repos.
+
+## Deploying to Vercel
+
+1. Push the project to a Git repository.
+2. In Vercel, import the repository.
+3. Configure environment variables under **Project Settings → Environment Variables**:
    - `RESEND_API_KEY`
    - `CONTACT_TO_EMAIL`
-   - `CONTACT_FROM_EMAIL` (opcional, use um domínio verificado em produção)
+   - `CONTACT_FROM_EMAIL` (optional, use a verified domain in production)
 4. Deploy.
 
-### Dica Resend em produção
+### Resend in production
 
-Para enviar com um remetente do seu domínio (ex.: `contato@guilhermemendes.dev`), verifique o domínio em [resend.com/domains](https://resend.com/domains) e defina `CONTACT_FROM_EMAIL="Portfolio <contato@guilhermemendes.dev>"`.
+To send from a domain of your own (e.g. `contact@your-domain.com`), verify the domain at [resend.com/domains](https://resend.com/domains) and set `CONTACT_FROM_EMAIL="Portfolio <contact@your-domain.com>"`.
 
-## Estrutura
+## Project structure
 
 ```
 app/
-  api/contact/route.ts   # Endpoint Resend
-  notebooks/
-    page.tsx             # Lista completa
-    [slug]/page.tsx      # Renderiza HTML exportado em iframe
-  layout.tsx
-  page.tsx               # Home (todas as seções)
-  opengraph-image.tsx    # OG image dinâmica
+  api/contact/route.ts          # Resend endpoint
+  [locale]/
+    layout.tsx                  # Navbar + Footer (locale-aware)
+    page.tsx                    # Home (all sections)
+    notebooks/
+      page.tsx                  # Full list
+      [slug]/page.tsx           # Renders exported HTML in sandboxed iframe
+  layout.tsx                    # Root <html>/<body>, providers
+  page.tsx                      # Redirects / → /pt
+  opengraph-image.tsx           # Dynamic OG image
   sitemap.ts
   robots.ts
 components/
-  sections/              # Hero, About, TechStack, Experience, Projects, Notebooks, CVDownload, Contact
-  ui/                    # Componentes shadcn/ui
-  navbar.tsx, footer.tsx, theme-provider.tsx, theme-toggle.tsx
+  sections/                     # Hero, About, TechStack, Experience, Projects, Notebooks, CVDownload, Contact
+  ui/                           # shadcn/ui primitives
+  navbar.tsx, footer.tsx
+  theme-provider.tsx, theme-toggle.tsx
+  language-toggle.tsx
 content/
-  cvs.ts                 # Metadados dos CVs (PT/EN)
-  notebooks.ts           # Metadados dos notebooks
+  i18n.ts                       # Full PT/EN dictionary
+  cvs.ts                        # Resume variants (PT/EN)
+  notebooks.ts                  # Notebook metadata
 lib/
-  github.ts              # Fetch + filtro dos repos
-  contact-schema.ts      # Validação zod
-  site.ts                # Constantes do site
+  github.ts                     # GitHub repo fetch + filter
+  contact-schema.ts             # Zod schema for the contact form
+  i18n.ts                       # Locale types + dictionary getter
+  site.ts                       # Site-wide constants
 public/
-  cv/                    # PDFs dos currículos
-  notebooks/             # HTMLs exportados do Databricks/Jupyter
+  cv/                           # Resume PDFs
+  notebooks/                    # Exported HTML notebooks (Databricks / Jupyter)
 ```

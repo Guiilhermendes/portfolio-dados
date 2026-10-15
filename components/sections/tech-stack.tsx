@@ -2,25 +2,31 @@ import {
   SiApacheairflow,
   SiApachekafka,
   SiApachespark,
+  SiClaude,
+  SiCursor,
   SiDatabricks,
   SiDatadog,
   SiDocker,
   SiGithubactions,
+  SiGithubcopilot,
   SiGrafana,
   SiJavascript,
   SiKubernetes,
   SiMongodb,
   SiPostgresql,
   SiPython,
+  SiTerraform,
   SiTypescript,
 } from "react-icons/si";
 import { FaAws, FaMicrosoft } from "react-icons/fa6";
 import {
+  Bot,
   Cloud,
   Database,
   FileCode2,
   HardDrive,
   KeyRound,
+  Sparkles,
   Workflow,
   Zap,
 } from "lucide-react";
@@ -70,11 +76,20 @@ const items: Record<string, Item[]> = {
     { name: "Event-driven", icon: Cloud },
   ],
   devops: [
+    { name: "Terraform", icon: SiTerraform },
     { name: "Docker", icon: SiDocker },
     { name: "Kubernetes", icon: SiKubernetes },
     { name: "GitHub Actions", icon: SiGithubactions },
     { name: "Grafana", icon: SiGrafana },
     { name: "Datadog", icon: SiDatadog },
+  ],
+  ai: [
+    { name: "GitHub Copilot", icon: SiGithubcopilot },
+    { name: "Cursor", icon: SiCursor },
+    { name: "Claude Code", icon: SiClaude },
+    { name: "Amazon Q", icon: FaAws },
+    { name: "Codeium", icon: Sparkles },
+    { name: "MCP / Agents", icon: Bot },
   ],
 };
 
@@ -85,6 +100,7 @@ const groupOrder: Array<keyof Dictionary["techStack"]["groups"]> = [
   "cloud",
   "streaming",
   "devops",
+  "ai",
 ];
 
 export function TechStack({ dict }: { dict: Dictionary }) {

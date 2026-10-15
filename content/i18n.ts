@@ -111,6 +111,10 @@ const pt = {
         title: "DevOps & Observabilidade",
         caption: "CI/CD, containers e monitoramento",
       },
+      ai: {
+        title: "IA & Produtividade",
+        caption: "Agentic coding, LLM workflows e ferramentas de IA",
+      },
     },
   },
 
@@ -128,7 +132,9 @@ const pt = {
         bullets: [
           "Desenvolvimento e otimização de plataformas de dados em nuvem para sistemas críticos de decisão no setor financeiro.",
           "Construção de pipelines e workflows serverless com AWS Glue, Lambda, S3, Athena, Databricks e Secrets Manager.",
+          "Provisionamento e versionamento de infraestrutura AWS com Terraform (IaC).",
           "Atuação com FICO DMPS em fluxos de dados e processos de motores de decisão.",
+          "Uso intensivo de IA generativa (GitHub Copilot, Cursor, Claude Code, Amazon Q) para acelerar desenvolvimento, documentação técnica e revisão de código.",
           "Melhoria de observabilidade (dashboards e alertas), reduzindo incidentes operacionais em ~25%.",
         ],
       },
@@ -364,6 +370,10 @@ const en: typeof pt = {
         title: "DevOps & Observability",
         caption: "CI/CD, containers and monitoring",
       },
+      ai: {
+        title: "AI & Productivity",
+        caption: "Agentic coding, LLM workflows and AI tooling",
+      },
     },
   },
 
@@ -381,7 +391,9 @@ const en: typeof pt = {
         bullets: [
           "Build and optimize cloud data platforms for mission-critical decisioning systems in the financial sector.",
           "Design serverless pipelines and workflows with AWS Glue, Lambda, S3, Athena, Databricks and Secrets Manager.",
+          "Provision and version AWS infrastructure with Terraform (IaC).",
           "Work with FICO DMPS on data flows and decision engine processes.",
+          "Heavy use of generative AI (GitHub Copilot, Cursor, Claude Code, Amazon Q) to accelerate development, technical documentation and code review.",
           "Improved observability (dashboards and alerts), reducing operational incidents by ~25%.",
         ],
       },

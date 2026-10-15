@@ -15,6 +15,7 @@ const companies: Record<RoleKey, { company: string; tags: string[] }> = {
       "S3",
       "Athena",
       "Databricks",
+      "Terraform",
       "FICO DMPS",
       "PySpark",
     ],

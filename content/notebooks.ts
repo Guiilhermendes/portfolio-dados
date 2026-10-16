@@ -23,17 +23,16 @@ export type Notebook = {
  * O slug precisa ser único (minúsculas, sem espaços, usar hífen).
  */
 export const notebooks: Notebook[] = [
-  // Exemplo (remover quando adicionar o primeiro notebook real):
-  // {
-  //   slug: "etl-decisao-financeira",
-  //   title: "ETL para motor de decisão financeira",
-  //   description:
-  //     "Pipeline PySpark no Databricks que ingere eventos de decisão, aplica regras de validação e grava no S3 particionado por data.",
-  //   tags: ["PySpark", "Databricks", "ETL", "AWS S3"],
-  //   htmlPath: "/notebooks/etl-decisao-financeira.html",
-  //   date: "2026-01-15",
-  //   platform: "Databricks",
-  // },
+  {
+    slug: "DataFrame_knowledge_1",
+    title: "DataFrame and Delta Lake knowledge - Part 1",
+    description:
+      "Notebook about DataFrame and Delta Lake knowledge",
+    tags: ["DataFrame", "Delta Lake", "Databricks", "PySpark", "Spark"],
+    htmlPath: "/notebooks/DataFrame_knowledge_1.html",
+    date: "2026-10-16",
+    platform: "Databricks",
+  },
 ];
 
 export function getNotebook(slug: string): Notebook | undefined {

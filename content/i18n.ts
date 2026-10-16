@@ -36,7 +36,7 @@ const pt = {
     titleHighlight: "plataformas confiáveis",
     titleAfter: "e decisões em escala.",
     description:
-      "Engenheiro de Dados Sênior com 7+ anos em engenharia de software e dados. Construo pipelines ETL/ELT, workflows serverless e plataformas de dados em nuvem com Python, PySpark, Databricks e AWS.",
+      "Engenheiro de Dados Sênior com mais de 7 anos de experiência em engenharia de software e dados. Construo pipelines ETL/ELT, workflows serverless e plataformas de dados em nuvem com Python, PySpark, Databricks e AWS.",
     ctaContact: "Entrar em contato",
     ctaDownload: "Baixar CV",
     ctaFullStack: "Ver portfólio Full Stack",
@@ -49,7 +49,7 @@ const pt = {
     eyebrow: "Sobre",
     title: "Engenharia de dados com mentalidade de software",
     description:
-      "Combino 7+ anos entre engenharia de software, engenharia de dados e cloud. Atuo em sistemas críticos e distribuídos em larga escala, com foco em escalabilidade, qualidade de dados, observabilidade e automação.",
+      "Combino mais de 7 anos de experiência entre engenharia de software, engenharia de dados e cloud. Atuo em sistemas críticos e distribuídos em larga escala, com foco em escalabilidade, qualidade de dados, observabilidade e automação.",
     impactLabel: "impacto",
     metrics: [
       {
@@ -295,7 +295,7 @@ const en: typeof pt = {
     titleHighlight: "reliable platforms",
     titleAfter: "and decisions at scale.",
     description:
-      "Senior Data Engineer with 7+ years across software and data engineering. I build ETL/ELT pipelines, serverless workflows and cloud data platforms using Python, PySpark, Databricks and AWS.",
+      "Senior Data Engineer with more than 7 years of experience across software and data engineering. I build ETL/ELT pipelines, serverless workflows and cloud data platforms using Python, PySpark, Databricks and AWS.",
     ctaContact: "Get in touch",
     ctaDownload: "Download resume",
     ctaFullStack: "View Full Stack portfolio",
@@ -308,7 +308,7 @@ const en: typeof pt = {
     eyebrow: "About",
     title: "Data engineering with a software mindset",
     description:
-      "7+ years combining software engineering, data engineering and cloud. I work on mission-critical, distributed systems at scale, focused on scalability, data quality, observability and automation.",
+      "More than 7 years of experience combining software engineering, data engineering and cloud. I work on mission-critical, distributed systems at scale, focused on scalability, data quality, observability and automation.",
     impactLabel: "impact",
     metrics: [
       {

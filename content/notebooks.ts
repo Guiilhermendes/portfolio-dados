@@ -40,7 +40,7 @@ export const notebooks: Notebook[] = [
       "Notebook about DataFrame and Delta Lake knowledge",
     tags: ["DataFrame", "Delta Lake", "Databricks", "PySpark", "Spark", "Tables", "SQL", "Volumes", "Catalogs"],
     htmlPath: "/notebooks/DataFrame_knowledge_2.html",
-    date: "2026-10-16",
+    date: "2026-10-18",
     platform: "Databricks",
   },
 ];

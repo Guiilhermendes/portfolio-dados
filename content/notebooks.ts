@@ -34,12 +34,12 @@ export const notebooks: Notebook[] = [
     platform: "Databricks",
   },
   {
-    slug: "DataFrame_knowledge_2",
+    slug: "Dataframe_knowledge_2",
     title: "DataFrame and Delta Lake knowledge - Part 2",
     description:
       "Notebook about DataFrame and Delta Lake knowledge",
     tags: ["DataFrame", "Delta Lake", "Databricks", "PySpark", "Spark", "Tables", "SQL", "Volumes", "Catalogs"],
-    htmlPath: "/notebooks/DataFrame_knowledge_2.html",
+    htmlPath: "/notebooks/Dataframe_knowledge_2.html",
     date: "2026-10-18",
     platform: "Databricks",
   },

@@ -43,6 +43,16 @@ export const notebooks: Notebook[] = [
     date: "2026-10-18",
     platform: "Databricks",
   },
+  {
+    slug: "Sql_Dataframes_knowledge",
+    title: "SQL and Dataframes knowledge",
+    description:
+      "Notebook about SQL and Dataframes knowledge",
+    tags: ["DataFrame", "Databricks", "PySpark", "Spark", "Tables", "SQL", "Volumes", "Catalogs"],
+    htmlPath: "/notebooks/Sql_Dataframes_knowledge.html",
+    date: "2026-10-19",
+    platform: "Databricks",
+  },
 ];
 
 export function getNotebook(slug: string): Notebook | undefined {

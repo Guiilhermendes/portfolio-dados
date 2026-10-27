@@ -24,6 +24,26 @@ export type Notebook = {
  */
 export const notebooks: Notebook[] = [
   {
+    slug: "Optimization",
+    title: "Spark Optimization, Shuffling & Data Skew Techniques",
+    description:
+      "Explores PySpark performance optimization strategies, including execution plan analysis (.explain), understanding narrow vs. wide transformations, repartitioning vs. coalescing, Broadcast Joins, and handling data skew using salting techniques.",
+    tags: ["Databricks", "PySpark", "Spark", "Optimization", "Explain", "Partitioning", "Broadcast Join", "Salting", "Volumes"],
+    htmlPath: "/notebooks/Optimization.html",
+    date: "2026-10-27",
+    platform: "Databricks",
+  },
+  {
+    slug: "Build_DeltaLake",
+    title: "Building Delta Lake Tables & Pipelines",
+    description:
+      "Demonstrates building a full Delta Lake pipeline by loading CSV sources into Delta format, handling schema creation, appending new data, performing upserts via MERGE operations, and executing SQL joins across multiple tables.",
+    tags: ["Delta Lake", "Databricks", "PySpark", "Spark", "SQL", "Merge", "Upsert", "Volumes"],
+    htmlPath: "/notebooks/Build_DeltaLake.html",
+    date: "2026-10-23",
+    platform: "Databricks",
+  },
+  {
     slug: "Partition_knowledge",
     title: "Databricks Partitioning with partitionBy",
     description:
@@ -61,6 +81,16 @@ export const notebooks: Notebook[] = [
     tags: ["Delta Lake", "Databricks", "PySpark", "Spark", "Tables", "SQL", "Volumes", "Time Travel"],
     htmlPath: "/notebooks/Deltalake_knowledge_1.html",
     date: "2026-10-21",
+    platform: "Databricks",
+  },
+  {
+    slug: "Pyspark_pandas_koalas_knowledge",
+    title: "Churn Analysis with PySpark Pandas (Koalas)",
+    description:
+      "Explore this Databricks notebook demonstrating how to read, filter, and group churn data from Churn.csv using pandas and pyspark.pandas (formerly Koalas).",
+    tags: ["Pandas", "Pyspark.pandas", "Python", "Databricks", "PySpark", "Spark", "Koalas"],
+    htmlPath: "/notebooks/Pyspark_pandas_koalas_knowledge.html",
+    date: "2026-10-22",
     platform: "Databricks",
   },
   {

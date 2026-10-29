@@ -24,6 +24,26 @@ export type Notebook = {
  */
 export const notebooks: Notebook[] = [
   {
+    slug: "Quality_Delta",
+    title: "Delta Lake Data Quality & Constraints",
+    description:
+      "Explores Delta Lake data quality and governance features, including Schema Enforcement, Schema Evolution with mergeSchema, adding CHECK constraints for data validation, and auditing table changes using DESCRIBE HISTORY.",
+    tags: ["Delta Lake", "Databricks", "PySpark", "Spark", "Data Quality", "Schema Evolution", "Constraints", "SQL"],
+    htmlPath: "/notebooks/Quality_Delta.html",
+    date: "2026-10-29",
+    platform: "Databricks",
+  },
+  {
+    slug: "Optimization_Delta",
+    title: "Delta Lake Table Optimization & Z-Ordering",
+    description:
+      "Demonstrates Delta Lake performance tuning techniques, including table compaction with OPTIMIZE, file co-locating via Z-ORDER BY, small file problem mitigation, and measuring query execution performance improvements.",
+    tags: ["Delta Lake", "Databricks", "PySpark", "Spark", "Optimization", "Z-Order", "SQL", "Volumes"],
+    htmlPath: "/notebooks/Optimization_Delta.html",
+    date: "2026-10-28",
+    platform: "Databricks",
+  },
+  {
     slug: "Optimization",
     title: "Spark Optimization, Shuffling & Data Skew Techniques",
     description:

@@ -24,6 +24,16 @@ export type Notebook = {
  */
 export const notebooks: Notebook[] = [
   {
+    slug: "Observability",
+    title: "Data Observability & Quality Metrics",
+    description:
+      "Implements data observability and quality metrics using PySpark. Features tracking for data freshness, processing latency, volume monitoring, anomaly detection (nulls, invalid values, duplicates), and historical logging of metrics in a Delta table.",
+    tags: ["Observability", "Data Quality", "PySpark", "Databricks", "Delta Lake", "Metrics", "Monitoring"],
+    htmlPath: "/notebooks/Observability.html",
+    date: "2026-10-29",
+    platform: "Databricks",
+  },
+  {
     slug: "Quality_Delta",
     title: "Delta Lake Data Quality & Constraints",
     description:

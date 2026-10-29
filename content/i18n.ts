@@ -208,9 +208,7 @@ const pt = {
     description:
       "Certificados de cursos e formações em engenharia de dados, cloud e plataformas.",
     empty: "Nenhum certificado publicado ainda.",
-    download: "Baixar PDF",
-    view: "Visualizar",
-    verify: "Verificar",
+    viewOnline: "Ver certificado",
     instructor: "Instrutor",
     credentialId: "Credencial",
   },
@@ -481,9 +479,7 @@ const en: typeof pt = {
     description:
       "Course certificates and training credentials in data engineering, cloud and platforms.",
     empty: "No certificates published yet.",
-    download: "Download PDF",
-    view: "View",
-    verify: "Verify",
+    viewOnline: "View certificate",
     instructor: "Instructor",
     credentialId: "Credential",
   },

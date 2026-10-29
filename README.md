@@ -82,8 +82,9 @@ The language toggle in the navbar preserves the current path when switching loca
 
 ## How to add a certificate
 
-1. Save the PDF to `public/certificates/<slug>.pdf`.
-2. Register it in [`content/certificates.ts`](./content/certificates.ts):
+Prefer the issuer's **online credential URL** (Udemy, Coursera, etc.) — no local PDF required.
+
+1. Register it in [`content/certificates.ts`](./content/certificates.ts):
 
 ```ts
 {
@@ -100,13 +101,12 @@ The language toggle in the navbar preserves the current path when switching loca
   date: "2026-10-29",
   hours: "7.5h",
   tags: ["Databricks"],
-  pdfPath: "/certificates/my-cert.pdf",
-  credentialUrl: "https://ude.my/UC-...", // optional
+  credentialUrl: "https://www.udemy.com/certificate/UC-.../",
   credentialId: "UC-...", // optional
 }
 ```
 
-3. The certificate appears automatically in the **Certificates** section (`/#certificados`).
+2. The certificate appears automatically in the **Certificates** section (`/#certificados`) and links out to the online page.
 
 ## How the resume (CV) section works
 

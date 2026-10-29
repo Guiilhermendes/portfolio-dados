@@ -2,7 +2,6 @@ import {
   Award,
   Calendar,
   Clock,
-  Download,
   ExternalLink,
   GraduationCap,
 } from "lucide-react";
@@ -66,9 +65,14 @@ export function Certificates({
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold leading-snug">
+                  <a
+                    href={cert.credentialUrl}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="text-lg font-semibold leading-snug transition-colors group-hover:text-primary"
+                  >
                     {cert.title[locale]}
-                  </h3>
+                  </a>
                   <p className="mt-2 text-sm text-muted-foreground">
                     {cert.description[locale]}
                   </p>
@@ -112,28 +116,15 @@ export function Certificates({
 
                 <div className="flex flex-wrap gap-2 pt-1">
                   <Button asChild size="sm">
-                    <a href={cert.pdfPath} download>
-                      <Download className="h-4 w-4" />
-                      {dict.certificates.download}
+                    <a
+                      href={cert.credentialUrl}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      {dict.certificates.viewOnline}
+                      <ExternalLink className="h-3.5 w-3.5" />
                     </a>
                   </Button>
-                  <Button asChild size="sm" variant="outline">
-                    <a href={cert.pdfPath} target="_blank" rel="noreferrer noopener">
-                      {dict.certificates.view}
-                    </a>
-                  </Button>
-                  {cert.credentialUrl && (
-                    <Button asChild size="sm" variant="ghost">
-                      <a
-                        href={cert.credentialUrl}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        {dict.certificates.verify}
-                        <ExternalLink className="h-3.5 w-3.5" />
-                      </a>
-                    </Button>
-                  )}
                 </div>
               </CardContent>
             </Card>

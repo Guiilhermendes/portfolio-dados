@@ -14,18 +14,22 @@ export type Certificate = {
   /** Course length, e.g. "7.5h". */
   hours?: string;
   tags: string[];
-  /** Public path to the PDF under /public. */
-  pdfPath: string;
-  /** External verification URL (optional). */
-  credentialUrl?: string;
+  /**
+   * Public verification / certificate URL (required).
+   * Prefer the issuer's online page (e.g. Udemy certificate URL).
+   */
+  credentialUrl: string;
   /** Credential / certificate number (optional). */
   credentialId?: string;
+  /** Optional local PDF under /public (fallback only). */
+  pdfPath?: string;
 };
 
 /**
  * How to add a new certificate:
- * 1. Save the PDF to `public/certificates/<slug>.pdf`.
- * 2. Add an entry below with a unique `id`.
+ * 1. Prefer the online credential URL from the issuer (Udemy, Coursera, etc.).
+ * 2. Add an entry below with a unique `id` and `credentialUrl`.
+ * 3. Optionally keep a local PDF in `public/certificates/` via `pdfPath`.
  */
 export const certificates: Certificate[] = [
   {
@@ -43,8 +47,8 @@ export const certificates: Certificate[] = [
     date: "2026-10-29",
     hours: "7.5h",
     tags: ["Databricks", "PySpark", "Delta Lake", "Spark"],
-    pdfPath: "/certificates/UC-Databricks-Basico-Ao-Avancado-2026.pdf",
-    credentialUrl: "https://ude.my/UC-47c3ff68-680a-4ab2-9e89-884ea56ae8c3",
+    credentialUrl:
+      "https://www.udemy.com/certificate/UC-47c3ff68-680a-4ab2-9e89-884ea56ae8c3/",
     credentialId: "UC-47c3ff68-680a-4ab2-9e89-884ea56ae8c3",
   },
 ];

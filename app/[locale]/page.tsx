@@ -6,6 +6,7 @@ import { TechStack } from "@/components/sections/tech-stack";
 import { Experience } from "@/components/sections/experience";
 import { Projects } from "@/components/sections/projects";
 import { Notebooks } from "@/components/sections/notebooks";
+import { Certificates } from "@/components/sections/certificates";
 import { CVDownload } from "@/components/sections/cv-download";
 import { Contact } from "@/components/sections/contact";
 import { getDictionary, isLocale, type Locale } from "@/lib/i18n";
@@ -67,6 +68,7 @@ export default async function HomePage({
       <Experience dict={dict} />
       <Projects dict={dict} locale={l} />
       <Notebooks dict={dict} locale={l} />
+      <Certificates dict={dict} locale={l} />
       <CVDownload dict={dict} />
       <Contact dict={dict} />
     </>

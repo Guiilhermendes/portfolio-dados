@@ -80,6 +80,34 @@ The language toggle in the navbar preserves the current path when switching loca
 
 > Jupyter? Use **File → Download as → HTML**. Same structure.
 
+## How to add a certificate
+
+1. Save the PDF to `public/certificates/<slug>.pdf`.
+2. Register it in [`content/certificates.ts`](./content/certificates.ts):
+
+```ts
+{
+  id: "my-cert",
+  title: {
+    pt: "Título em português",
+    en: "Title in English",
+  },
+  description: {
+    pt: "Descrição curta.",
+    en: "Short description.",
+  },
+  issuer: "Udemy",
+  date: "2026-10-29",
+  hours: "7.5h",
+  tags: ["Databricks"],
+  pdfPath: "/certificates/my-cert.pdf",
+  credentialUrl: "https://ude.my/UC-...", // optional
+  credentialId: "UC-...", // optional
+}
+```
+
+3. The certificate appears automatically in the **Certificates** section (`/#certificados`).
+
 ## How the resume (CV) section works
 
 Resume metadata lives in [`content/cvs.ts`](./content/cvs.ts). Both PT and EN are included:

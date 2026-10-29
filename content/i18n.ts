@@ -22,6 +22,7 @@ const pt = {
     experience: "Experiência",
     projects: "Projetos",
     notebooks: "Notebooks",
+    certificates: "Certificados",
     cv: "CV",
     contact: "Contato",
     fullStackCta: "Full Stack",
@@ -201,6 +202,19 @@ const pt = {
     notFoundTitle: "Notebook não encontrado",
   },
 
+  certificates: {
+    eyebrow: "Certificados",
+    title: "Formações e credenciais",
+    description:
+      "Certificados de cursos e formações em engenharia de dados, cloud e plataformas.",
+    empty: "Nenhum certificado publicado ainda.",
+    download: "Baixar PDF",
+    view: "Visualizar",
+    verify: "Verificar",
+    instructor: "Instrutor",
+    credentialId: "Credencial",
+  },
+
   cv: {
     eyebrow: "Currículo",
     title: "Baixe meu CV",
@@ -281,6 +295,7 @@ const en: typeof pt = {
     experience: "Experience",
     projects: "Projects",
     notebooks: "Notebooks",
+    certificates: "Certificates",
     cv: "Resume",
     contact: "Contact",
     fullStackCta: "Full Stack",
@@ -458,6 +473,19 @@ const en: typeof pt = {
       "Complete collection of data engineering and analysis notebooks.",
     listEmpty: "No notebooks published yet.",
     notFoundTitle: "Notebook not found",
+  },
+
+  certificates: {
+    eyebrow: "Certificates",
+    title: "Training and credentials",
+    description:
+      "Course certificates and training credentials in data engineering, cloud and platforms.",
+    empty: "No certificates published yet.",
+    download: "Download PDF",
+    view: "View",
+    verify: "Verify",
+    instructor: "Instructor",
+    credentialId: "Credential",
   },
 
   cv: {

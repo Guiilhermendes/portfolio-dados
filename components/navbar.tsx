@@ -34,6 +34,7 @@ export function Navbar({
     { href: `/${locale}#experiencia`, label: dict.nav.experience },
     { href: `/${locale}#projetos`, label: dict.nav.projects },
     { href: `/${locale}#notebooks`, label: dict.nav.notebooks },
+    { href: `/${locale}#certificados`, label: dict.nav.certificates },
     { href: `/${locale}#cv`, label: dict.nav.cv },
     { href: `/${locale}#contato`, label: dict.nav.contact },
   ];
